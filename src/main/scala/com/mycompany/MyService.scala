@@ -10,11 +10,8 @@ class MyServiceActor extends HttpServiceActor with MyService {
   // this actor only runs our route, but you could add
   // other things here, like request stream processing
   // or timeout handling
-  def receive = {
-    case a: Any => {
+  def receive =
       runRoute(route)
-    }
-  }
 }
 
 
@@ -30,5 +27,5 @@ trait MyService extends HttpService {
       }
     }
 
-  def wicket: Directive0 = new WicketDirective
+  val wicket: Directive0 = new WicketDirective
 }
