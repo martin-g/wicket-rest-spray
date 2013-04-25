@@ -1,6 +1,6 @@
 package com.mycompany
 
-import spray.routing._
+import spray.routing.{Directive0, Route}
 import shapeless.HNil
 
 /**
@@ -9,7 +9,7 @@ import shapeless.HNil
 class WicketDirective
   extends Directive0 {
 
-  def happly(f: (HNil) => _root_.spray.routing.Route) = {
+  def happly(f: (HNil) => Route) = {
     Console.err.println("1. ")
     try {
       f(HNil)
